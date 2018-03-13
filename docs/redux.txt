@@ -1,0 +1,9 @@
+dev-tools (chrome)
+https://github.com/zalmoxisus/redux-devtools-extension#usage
+
+reducers
+https://www.npmjs.com/package/icepick -> (issues with build)
+https://www.npmjs.com/package/immutable
+
+observable
+https://github.com/piotrwitek/react-redux-typescript-guide

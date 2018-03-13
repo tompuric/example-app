@@ -1,0 +1,6 @@
+# charts
+http://www.reactd3.org/
+http://recharts.org/#/en-US/
+
+# layouts
+https://github.com/STRML/react-grid-layout

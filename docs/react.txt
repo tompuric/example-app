@@ -1,0 +1,2 @@
+https://github.com/kriasoft/react-starter-kit/blob/master/docs/react-style-guide.md
+https://github.com/davezuko/react-redux-starter-kit/tree/c1c4e8c3369d4d9397fa65149acbe6410892b0cf

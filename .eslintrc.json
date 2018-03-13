@@ -1,0 +1,104 @@
+{
+    "root": true,
+    "extends": [
+        "airbnb-base",
+        "plugin:react/recommended"
+    ],
+    "parser": "babel-eslint",
+    "env":{
+        "node": true,
+        "es6": true,
+        "browser": true
+    },
+    "globals": {
+        "__BASE_URL__": true,
+        "__API_URL__": true
+    },
+    "parserOptions": {
+        "ecmaFeatures": {
+            "experimentalObjectRestSpread": true,
+            "jsx": true
+        },
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+        // http://eslint.org/docs/rules/indent
+        // Enforce 2 space indent + rule for switch cases
+        "indent": ["error", 2, { "SwitchCase": 1 }],
+ 
+        // http://eslint.org/docs/rules/no-duplicate-imports
+        // handled by import/no-duplicate rule
+        "no-duplicate-imports": "off",
+ 
+        // http://eslint.org/docs/rules/quote-props.html
+        // require quotes around object literal property names - overrides AirBnB rule with numbers:true for
+        // better Flow compatibility with numeric string keys
+        "quote-props": [
+            "error",
+            "as-needed",
+            { "keywords": false, "unnecessary": true, "numbers": true }
+        ],
+ 
+        // http://eslint.org/docs/rules/semi
+        // Enforce semi-colons
+        "semi": ["error", "always"],
+ 
+        // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/extensions.md
+        // Enforce no usage of ".js" at the end of imports
+        "import/extensions": ["error", "never"],
+ 
+        // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/default.md
+        // Ensure that default imports are matched by corresponding default exports
+        "import/default": ["error", "never"],
+
+        "import/no-named-as-default": "off",
+ 
+        // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-extraneous-dependencies.md
+        // Opt out of no extraneous dependencies, as storybook is a dev dependency commonly used as an import
+        "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+ 
+        // http://eslint.org/docs/rules/no-multiple-empty-lines
+        // Disallow more than 1 empty lines
+        "no-multiple-empty-lines": ["error", { "max": 1 }],
+ 
+        // http://eslint.org/docs/rules/padded-blocks
+        // Enforce no padding within blocks
+        "padded-blocks": ["error", "never"],
+ 
+        // http://eslint.org/docs/rules/no-unused-expressions
+        // Chai used used expressions for assertions
+        // expect(result).to.be.ok;
+        "no-unused-expressions": "off",
+ 
+        // http://eslint.org/docs/rules/no-console
+        // Allow using the console. This is node after all.
+        "no-console": "off",
+ 
+        // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/require-default-props.md
+        // JFP-215: Remove this rule. Allow non-required props to be declared without a default value.
+        "react/require-default-props": "off",
+ 
+        // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-array-index-key.md
+        // JFP-215: Remove this rule. Allow elements to use Array index in its key.
+        "react/no-array-index-key": "off",
+ 
+        // http://eslint.org/docs/rules/comma-dangle
+        // Do not require comma dangle on functions in Node.js files because we don"t have the
+        // luxury of Babel making the code ES5 valid for us.
+        "comma-dangle": [
+            "error",
+            {
+                "arrays": "always-multiline",
+                "objects": "always-multiline",
+                "imports": "always-multiline",
+                "exports": "always-multiline",
+                "functions": "ignore"
+            }
+        ],
+        "class-methods-use-this": "off",
+        "react/jsx-uses-vars": [2]
+    }
+}
